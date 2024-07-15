@@ -19,13 +19,13 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
 
    ```sh
    git clone https://github.com/daikinetic/LicenseFetcher.git
-   cd LicenseFetcher
    ```
 
 ## 使用方法
 
 1. LicenseFetcher ツールをビルドします。 
    ```sh
+   cd LicenseFetcher
    swift build
    ```
    
