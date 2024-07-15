@@ -39,18 +39,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
-# Flutter specific
-#
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pdm
-.plugin_dependencies
-flutter_export_environment.sh
-.dart_tool/
-
 # Node
 #
 node_modules/
 npm-debug.log
-
+yarn-error.log
