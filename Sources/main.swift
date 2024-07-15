@@ -26,7 +26,7 @@ class FetchLicensesCommand: Command {
     let currentDirectoryPath = fileManager.currentDirectoryPath
     let outputFile = currentDirectoryPath + "../../../licenses.json"
 
-    print("Reading Package.resolved and fetching licenses...".yellow)
+    print("Reading Package.resolved and fetching licenses...aaaa".yellow)
     let packageResolvedPath = currentDirectoryPath + "../../../Package.resolved"
     let packageResolvedURL = URL(fileURLWithPath: packageResolvedPath)
 
@@ -67,7 +67,7 @@ class FetchLicensesCommand: Command {
       print("Licenses successfully written to \(outputFile)".green)
 
     } catch {
-      throw CLI.Error(message: "Error reading Package.resolved: \(error)".red)
+      throw CLI.Error(message: "Error reading Package.resolved: \(error), packageResolvedPath: \(packageResolvedPath)".red)
     }
   }
 
@@ -137,6 +137,6 @@ class FetchLicensesCommand: Command {
   }
 }
 
-let cli = CLI(name: "LicenseFetcher", version: "1.0", description: "A tool to fetch licenses of dependencies")
+let cli = CLI(name: "LicenseFetcher", version: "1.4.0", description: "A tool to fetch licenses of dependencies")
 cli.commands = [FetchLicensesCommand()]
 cli.goAndExit()
