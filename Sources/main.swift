@@ -24,10 +24,10 @@ class FetchLicensesCommand: Command {
 
     let fileManager = FileManager.default
     let currentDirectoryPath = fileManager.currentDirectoryPath
-    let outputFile = currentDirectoryPath + "../../../licenses.json"
+    let outputFile = currentDirectoryPath + "/../../../licenses.json"
 
     print("Reading Package.resolved and fetching licenses...aaaa".yellow)
-    let packageResolvedPath = currentDirectoryPath + "../../../Package.resolved"
+    let packageResolvedPath = currentDirectoryPath + "/../../../Package.resolved"
     let packageResolvedURL = URL(fileURLWithPath: packageResolvedPath)
 
     do {
@@ -137,6 +137,6 @@ class FetchLicensesCommand: Command {
   }
 }
 
-let cli = CLI(name: "LicenseFetcher", version: "1.6.0", description: "A tool to fetch licenses of dependencies")
+let cli = CLI(name: "LicenseFetcher", version: "1.7.0", description: "A tool to fetch licenses of dependencies")
 cli.commands = [FetchLicensesCommand()]
 cli.goAndExit()
