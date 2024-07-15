@@ -27,7 +27,7 @@ class FetchLicensesCommand: Command {
     let outputFile = currentDirectoryPath + "../../../licenses.json"
 
     print("Reading Package.resolved and fetching licenses...".yellow)
-    let packageResolvedPath = currentDirectoryPath + "/../Package.resolved"
+    let packageResolvedPath = currentDirectoryPath + "../../../Package.resolved"
     let packageResolvedURL = URL(fileURLWithPath: packageResolvedPath)
 
     do {
