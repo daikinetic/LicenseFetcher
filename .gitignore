@@ -1,8 +1,56 @@
-.DS_Store
-/.build
-/Packages
-xcuserdata/
+# Xcode
+#
+build/
 DerivedData/
-.swiftpm/configuration/registries.json
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
-.netrc
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# Swift Package Manager
+#
+.build/
+Packages/
+.package.resolved
+
+# CocoaPods
+#
+Pods/
+.podspec
+!Podfile.lock
+.DS_Store
+
+# Carthage
+#
+Carthage/Build/
+
+# Tuist
+#
+Tuist/Dependencies/Lockfiles/Package.resolved
+
+# fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Flutter specific
+#
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pdm
+.plugin_dependencies
+flutter_export_environment.sh
+.dart_tool/
+
+# Node
+#
+node_modules/
+npm-debug.log
+
