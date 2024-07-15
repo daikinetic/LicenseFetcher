@@ -18,7 +18,7 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
 このリポジトリをクローンします。
 
    ```sh
-   git clone https://github.com/username/LicenseFetcher.git
+   git clone https://github.com/daikinetic/LicenseFetcher.git
    cd LicenseFetcher
    ```
 
