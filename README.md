@@ -39,6 +39,15 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
    mv licenses.json ../
    ```
 
+4. `licenses.json`ファイルを Xcode プロジェクトに追加します。
+   - Xcode でプロジェクトを開きます。
+   - `Resources`フォルダに`licenses.json`ファイルをドラッグ＆ドロップします。
+   - 「Copy items if needed」にチェックを入れて、「Add to targets」にプロジェクトのターゲットを選択します。
+
+
+
+
+
 
 
 
