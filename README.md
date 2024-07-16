@@ -34,6 +34,11 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
    .build/debug/LicenseFetcher fetch-licenses
    ```
 
+   ```sh
+   cd .build/checkouts/LicenseFetcher
+   swift run LicenseFetcher fetch-licenses
+   ```
+
 3. 生成された `licenses.json`ファイルをプロジェクトのルートディレクトリに移動します。
    ```sh
    mv licenses.json ../
