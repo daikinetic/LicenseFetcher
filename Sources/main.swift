@@ -54,7 +54,7 @@ class FetchLicensesCommand: Command {
           licenses.append(licenseInfo)
           print("Fetched license for \(package)".green)
         } else {
-          throw CLI.Error(message: "Could not fetch license for \(package) from \(repositoryURL)".red)
+          print("Could not fetch license for \(package) from \(repositoryURL)".yellow)
         }
       }
 
@@ -79,9 +79,9 @@ class FetchLicensesCommand: Command {
       "LICENSE.rst"
     ]
 
-    let branches = ["master", "main"]
+    let possibleBranches = ["master", "main"]
 
-    for branch in branches {
+    for branch in possibleBranches {
       for path in possibleLicensePaths {
         let licenseURL = repositoryURL.replacingOccurrences(of: ".git", with: "") + "/raw/\(branch)/" + path
         if let url = URL(string: licenseURL),
