@@ -42,7 +42,7 @@ class FetchLicensesCommand: Command {
       }
 
       var licenses: [LicenseInfo] = []
-
+//
       for pin in pins {
         guard let package = pin["identity"] as? String,
               let repositoryURL = pin["location"] as? String else {
@@ -79,11 +79,15 @@ class FetchLicensesCommand: Command {
       "LICENSE.rst"
     ]
 
-    for path in possibleLicensePaths {
-      let licenseURL = repositoryURL.replacingOccurrences(of: ".git", with: "") + "/raw/master/" + path
-      if let url = URL(string: licenseURL),
-         let licenseText = try? String(contentsOf: url, encoding: .utf8) {
-        return parseLicenseText(licenseText, packageName: packageName)
+    let branches = ["master", "main"]
+
+    for branch in branches {
+      for path in possibleLicensePaths {
+        let licenseURL = repositoryURL.replacingOccurrences(of: ".git", with: "") + "/raw/\(branch)/" + path
+        if let url = URL(string: licenseURL),
+           let licenseText = try? String(contentsOf: url, encoding: .utf8) {
+          return parseLicenseText(licenseText, packageName: packageName)
+        }
       }
     }
 
@@ -137,6 +141,6 @@ class FetchLicensesCommand: Command {
   }
 }
 
-let cli = CLI(name: "LicenseFetcher", version: "1.7.0", description: "A tool to fetch licenses of dependencies")
+let cli = CLI(name: "LicenseFetcher", version: "1.8.0", description: "A tool to fetch licenses of dependencies")
 cli.commands = [FetchLicensesCommand()]
 cli.goAndExit()
