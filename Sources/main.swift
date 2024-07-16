@@ -141,6 +141,6 @@ class FetchLicensesCommand: Command {
   }
 }
 
-let cli = CLI(name: "LicenseFetcher", version: "1.8.0", description: "A tool to fetch licenses of dependencies")
+let cli = CLI(name: "LicenseFetcher", version: "1.9.0", description: "A tool to fetch licenses of dependencies")
 cli.commands = [FetchLicensesCommand()]
 cli.goAndExit()
