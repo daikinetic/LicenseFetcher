@@ -15,7 +15,9 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
 
 ## インストール
 
- `Package.swift` ファイルに以下を追加します。
+Swift Package Manager を使用してプロジェクトに追加できます。
+
+`Package.swift` ファイルに以下を追加します。
 
    ```swift
    dependencies: [
