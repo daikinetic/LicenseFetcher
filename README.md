@@ -15,10 +15,17 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
 
 ## インストール
 
-このリポジトリをクローンします。
+ `Package.swift` ファイルに以下を追加します。
 
-   ```sh
-   git clone https://github.com/daikinetic/LicenseFetcher.git
+   ```swift
+   dependencies: [
+       .package(url: "https://github.com/yourusername/LicenseFetcher.git", from: "1.0.0")
+   ],
+   targets: [
+       .target(
+           name: "YourTargetName",
+           dependencies: ["LicenseFetcher"]),
+   ]
    ```
 
 ## 使用方法
@@ -48,6 +55,46 @@ LicenseFetcher は、Xcode プロジェクトの依存パッケージのライ�
    - Xcode でプロジェクトを開きます。
    - `Resources`フォルダに`licenses.json`ファイルをドラッグ＆ドロップします。
    - 「Copy items if needed」にチェックを入れて、「Add to targets」にプロジェクトのターゲットを選択します。
+  
+
+## 使用される特定の型について
+
+`LicenseFetcher` ツールは、以下の構造体 `LicenseInfo` を使用してライセンス情報を管理します。この構造体は、依存関係ごとのライセンス情報を含む JSON ファイルにエンコードされます。
+
+```swift
+struct LicenseInfo: Codable {
+    let packageName: String
+    let licenseName: String
+    let copyright: String
+    let conditions: String
+    let disclaimer: String
+}
+```
+
+この構造体は、以下のフィールドを含みます:
+
+- packageName: パッケージの名前
+- licenseName: ライセンスの名前（例: MIT License, Apache License 2.0）
+- copyright: 著作権情報
+- conditions: ライセンスの条件
+- disclaimer: 免責事項
+
+## ライセンス情報の取得方法
+
+`LicenseFetcher` は、依存関係のリポジトリから以下のパスにあるライセンスファイルをチェックします:
+
+- LICENSE
+- LICENSE.txt
+- LICENSE.md
+- LICENSE.rst
+
+リポジトリの `master` ブランチと `main` ブランチの両方をチェックし、最初に見つかったライセンスファイルの情報を使用します。
+
+
+
+
+
+
 
 
 
